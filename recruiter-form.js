@@ -50,7 +50,6 @@ $(document).ready(function() {
 	$(':input').blur(function () {
 		if($(this).val().length > 0){
 			_gaq.push(['_trackEvent', 'input_exit', $(this).val()]);
-			alert($(this).val());
 		} 
 	});
 
