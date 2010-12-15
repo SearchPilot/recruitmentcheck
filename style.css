@@ -1,6 +1,6 @@
 h1 {
 	font-size: 200%;
-
+	width: 700px;
 }
 
 label {
@@ -11,6 +11,14 @@ label {
 }
 
 p {
+	width: 700px;
+}
+
+.intro {
+	font-size: 150%;
+}
+
+.outro {
 	font-size: 80%;
 }
 
