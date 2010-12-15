@@ -1,0 +1,16 @@
+label {
+	font-weight: bold;
+	display: block;
+	padding-top: 10px;
+}
+
+textarea {
+	width: 700px;
+	height: 15em;
+}
+
+form {
+	background-color: #eee;
+	width: 700px;
+	padding: 25px;
+}

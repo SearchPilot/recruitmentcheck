@@ -1,0 +1,55 @@
+<html>
+
+	<head>
+		<title>Approved suppliers</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.highlightFade.js"></script>
+		<script type="text/javascript" src="jquery.livequery.js"></script>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<script>
+			var myquestions = [
+					"What are your contact details?",
+					"How did you hear about our company?",
+					"What is your favourite colour?"
+					];
+
+			function addFormField() {
+				var id = document.getElementById("id").value;
+				$("#divTxt").append('<label id="row'+ id + '">Q: ' + myquestions[((id - 4) % (myquestions.length))] + '</label><textarea></textarea>');
+				$('#row' + id).highlightFade({speed:1000});
+			}
+
+			$(document).ready(function() {
+			$('textarea').livequery('focus', (function(){
+				var id = document.getElementById("id").value;
+				if (id > 3){
+					addFormField();
+				}
+				id = (id - 1) + 2;
+				document.getElementById("id").value = id;
+			}));
+
+			});
+					
+		</script>
+	</head>
+
+	<body>
+		<h1>Please complete the information below to become an approved supplier</h1>
+
+		<form action="/" method="post">
+			<input type="hidden" id="id" value="1">
+			<div id="divTxt">
+				<label>Q: What is your favourite colour?</label>
+				<textarea id="txtArea"></textarea>
+				<label>Q: Something</label>
+				<textarea id="txtArea"></textarea>
+				<label>Q: Something else</label>
+				<textarea id="txtArea"></textarea>
+				<label>Q: Something else</label>
+				<textarea id="txtArea"></textarea>
+			</div>
+
+		</form>
+
+</html>
