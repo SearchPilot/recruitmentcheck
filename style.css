@@ -1,7 +1,17 @@
+h1 {
+	font-size: 200%;
+
+}
+
 label {
 	font-weight: bold;
+	font-size: 110%;
 	display: block;
 	padding-top: 10px;
+}
+
+p {
+	font-size: 80%;
 }
 
 textarea {
