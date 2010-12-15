@@ -26,12 +26,6 @@ function addFormField() {
 	$('#row' + id).highlightFade({speed:1000});
 }
 
-$(document).ready(function() {
-	$('textarea').livequery('focus', (function(){
-		condAddField();
-	}));
-});
-
 function condAddField() {
 	var id = document.getElementById("id").value;
 	if (id > 3){
@@ -42,9 +36,22 @@ function condAddField() {
 }
 
 $(document).ready(function() {
+	$('textarea').livequery('focus', (function(){
+		condAddField();
+	}));
+
 	$('input').click(function(){
 		alert("Please ensure you have answered all questions");
 		condAddField();
 		return false;
 	});
+
+	var currentPage = jQuery.url.attr("path");
+	$(':input').blur(function () {
+		if($(this).val().length > 0){
+			_gaq.push(['_trackEvent', 'input_exit', $(this).val()]);
+			alert($(this).val());
+		} 
+	});
+
 });
