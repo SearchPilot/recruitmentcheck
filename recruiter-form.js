@@ -17,7 +17,8 @@ var myquestions = [
 "If you are selected as one of our preferred recruitment agents, how far would you go to keep us happy? Would you fight a bear?",
 "How do you promote synergy between applicants, companies, and your agency?",
 "Given the option, would would you prefer to recommend a candidate who is a vegetarian or a luddite?",
-"The use of social media sites in the workplace (limited to, but not including Digg.com) should always be treated as gross misconduct.' Agree or disagree?"
+"The use of social media sites in the workplace (limited to, but not including Digg.com) should always be treated as gross misconduct.' Agree or disagree?",
+"Can you ensure that your maximum won't always outperform the most eager average?"
 ];
 
 function addFormField() {
