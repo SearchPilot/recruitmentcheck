@@ -50,7 +50,7 @@ $(document).ready(function() {
 	var currentPage = jQuery.url.attr("path");
 	$(':input').blur(function () {
 		if($(this).val().length > 0){
-			_gaq.push(['_trackEvent', 'form', 'data_entry', $(this).val()]);
+			_gaq.push(['_trackEvent', 'form', 'data_entry', $(this).val(), document.getElementById("id").value]);
 		} 
 	});
 
