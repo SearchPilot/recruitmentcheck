@@ -18,7 +18,17 @@ var myquestions = [
 "How do you promote synergy between applicants, companies, and your agency?",
 "Given the option, would would you prefer to recommend a candidate who is a vegetarian or a luddite?",
 "The use of social media sites in the workplace (limited to, but not including Digg.com) should always be treated as gross misconduct.' Agree or disagree?",
-"Can you ensure that your maximum won't always outperform the most eager average?"
+"Can you ensure that your maximum won't always outperform the most eager average?",
+"You're in a desert, walking along in the sand, when all of a sudden you look down and see a tortoise. It's crawling toward you. You reach down and you flip the tortoise over on its back. The tortoise lays on its back, its belly baking in the hot sun, beating its legs trying to turn itself over, but it can't. Not without your help. But you're not helping. Why aren't you helping?",
+"Do you agree with this statement? 'Recruitment is a art'",
+"Would you require your candidates to have Microsoft Excel skills for a position in Database Architecture? Explain your answer.",
+"Please enter the 2nd sentence from the 4th paragraph of the 6th chapter of the 2nd edition of 'Liar's poker' to prove you are not a robot.",
+"You're waiting for a train, a train that will take you far away. You know where you hope this train will take you, but you don't know for sure. But it doesn't matter. How can it not matter to you where the train will take you?",
+"In what instances would it be acceptable to recommend job to a lesser qualified candidate for a position?",
+"Which describes you better? A) pathetic b) annoying",
+"Please share a joke that you feel is appropriate for a job interview.",
+"What is your opinion as to why one is unable to own a Canadian?",
+"How high can your clientele raise their feet to the ground?"
 ];
 
 function addFormField() {
