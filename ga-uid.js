@@ -13,7 +13,7 @@ distilledSetUid = function(ga) {
 				1,		// This custom var is set to slot #1.  Required parameter.
 				'UID',		// The name of the custom variable.  Required parameter.
 				distilledUid(),		// The value of the custom variable.  Required parameter.
-				1		// Sets the scope to visitor-level.  Optional parameter.
+				2		// Sets the scope to session-level.  Optional parameter.
 		]); 
 	} catch (err) {} //ensure that if anything goes wrong, we don't break the rest of the tracking code
 }
