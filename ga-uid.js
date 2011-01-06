@@ -1,3 +1,5 @@
+var uidname = 'UID_v_1_1';
+
 // with thanks to: http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript
 // note that this function returns a different UID on each call so need to use the same call to set all instances in the page - GA and internal tracking
 distilledGenerateUid = function() {
@@ -11,9 +13,9 @@ distilledSaveUid = function(ga, uid) {
 	try {
 		ga.push(['_setCustomVar',
 				1,		// This custom var is set to slot #1.  Required parameter.
-				'UID',		// The name of the custom variable.  Required parameter.
+				uidname,	// The name of the custom variable. Update on code change to debug effectively 
 				uid,		// The value of the custom variable.  Required parameter.
-				2		// Sets the scope to session-level.  Optional parameter.
+				1		// Sets the scope to session-level.  Optional parameter.
 		]); 
 	} catch (err) {} //ensure that if anything goes wrong, we don't break the rest of the tracking code
 }
@@ -23,7 +25,8 @@ function distilledSetUid(ga) {
         var cookiename = "__utmv";
 	var contents = "";
         var cookies = document.cookie.split(';');
-	var uidregexp = /.*UID=([^=]*)=.*/; //selects the UID variable from the cookie string (everything between "=")
+	var regexpstr = ".*"+uidname+"=([^=]*)=.*";
+	var uidregexp = new RegExp(regexpstr); //selects the UID variable from the cookie string (everything between "=")
 	try {
         	for (var i=0;i<cookies.length;i++){
 	                while (cookies[i].charAt(0)==' ') cookies[i] = cookies[i].substring(1,cookies[i].length);
