@@ -9,27 +9,11 @@ distilledUid = function() {
 
 distilledSetUid = function(ga) {
 	try {
-		if (distilledCheckAnalyticsCookie === 0) {
-			ga.push(['_setCustomVar',
-					1,		// This custom var is set to slot #1.  Required parameter.
-					'UID',		// The name of the custom variable.  Required parameter.
-					distilledUid(),		// The value of the custom variable.  Required parameter.
-					1		// Sets the scope to visitor-level.  Optional parameter.
-			]); 
-		}
+		ga.push(['_setCustomVar',
+				1,		// This custom var is set to slot #1.  Required parameter.
+				'UID',		// The name of the custom variable.  Required parameter.
+				distilledUid(),		// The value of the custom variable.  Required parameter.
+				1		// Sets the scope to visitor-level.  Optional parameter.
+		]); 
 	} catch (err) {} //ensure that if anything goes wrong, we don't break the rest of the tracking code
-}
-
-// With thanks to http://www.quirksmode.org/js/cookies.html
-function distilledCheckAnalyticsCookie() {
-        var cookiename = "__utma";
-        var cookiecheck = 0;
-        var cookies = document.cookie.split(';');
-        for (var i=0;i<cookies.length;i++){
-                while (cookies[i].charAt(0)==' ') cookies[i] = cookies[i].substring(1,cookies[i].length);
-                if (cookies[i].indexOf(cookiename+'=') == 0){
-                        cookiecheck = 1;
-                } //if
-        } //for
-        return cookiecheck;
 }
