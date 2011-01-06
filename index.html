@@ -54,7 +54,8 @@
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-19130946-2']);
-  distilledSetUid(_gaq);
+  uid = distilledUid();
+  distilledSetUid(_gaq, uid);
   _gaq.push(['_trackPageview']);
 
   (function() {

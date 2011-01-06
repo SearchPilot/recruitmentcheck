@@ -7,12 +7,12 @@ distilledUid = function() {
 	}).toUpperCase();
 }
 
-distilledSetUid = function(ga) {
+distilledSetUid = function(ga, uid) {
 	try {
 		ga.push(['_setCustomVar',
 				1,		// This custom var is set to slot #1.  Required parameter.
 				'UID',		// The name of the custom variable.  Required parameter.
-				distilledUid(),		// The value of the custom variable.  Required parameter.
+				uid,		// The value of the custom variable.  Required parameter.
 				2		// Sets the scope to session-level.  Optional parameter.
 		]); 
 	} catch (err) {} //ensure that if anything goes wrong, we don't break the rest of the tracking code
