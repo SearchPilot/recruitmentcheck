@@ -9,12 +9,14 @@ distilledUid = function() {
 
 distilledSetUid = function(ga) {
 	//need to add try / catch statement here
-	ga.push(['_setCustomVar',
-			1,		// This custom var is set to slot #1.  Required parameter.
-			'UID',		// The name of the custom variable.  Required parameter.
-			distilledUid(),		// The value of the custom variable.  Required parameter.
-			1		// Sets the scope to visitor-level.  Optional parameter.
-	]); 
+	if (distilledCheckAnalyticsCookie === 0) {
+		ga.push(['_setCustomVar',
+				1,		// This custom var is set to slot #1.  Required parameter.
+				'UID',		// The name of the custom variable.  Required parameter.
+				distilledUid(),		// The value of the custom variable.  Required parameter.
+				1		// Sets the scope to visitor-level.  Optional parameter.
+		]); 
+	}
 }
 
 // With thanks to http://www.quirksmode.org/js/cookies.html
