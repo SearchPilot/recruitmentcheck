@@ -21,7 +21,7 @@ distilledSaveUid = function(ga, uid) {
 // With thanks to http://www.quirksmode.org/js/cookies.html
 function distilledSetUid(ga) {
         var cookiename = "__utmv";
-	var contents;
+	var contents = "";
         var cookies = document.cookie.split(';');
 	var uidregexp = /.*UID=([^=]*)=.*/; //selects the UID variable from the cookie string (everything between "=")
         for (var i=0;i<cookies.length;i++){
