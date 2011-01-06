@@ -13,7 +13,7 @@ distilledSaveUid = function(ga, uid) {
 				1,		// This custom var is set to slot #1.  Required parameter.
 				'UID',		// The name of the custom variable.  Required parameter.
 				uid,		// The value of the custom variable.  Required parameter.
-				1		// Sets the scope to session-level.  Optional parameter.
+				2		// Sets the scope to session-level.  Optional parameter.
 		]); 
 	} catch (err) {} //ensure that if anything goes wrong, we don't break the rest of the tracking code
 }
@@ -24,12 +24,14 @@ function distilledSetUid(ga) {
 	var contents = "";
         var cookies = document.cookie.split(';');
 	var uidregexp = /.*UID=([^=]*)=.*/; //selects the UID variable from the cookie string (everything between "=")
-        for (var i=0;i<cookies.length;i++){
-                while (cookies[i].charAt(0)==' ') cookies[i] = cookies[i].substring(1,cookies[i].length);
-                if (cookies[i].indexOf(cookiename+'=') == 0){
-			contents = cookies[i].replace(uidregexp, "$1");
-                }
-        }
+	try {
+        	for (var i=0;i<cookies.length;i++){
+	                while (cookies[i].charAt(0)==' ') cookies[i] = cookies[i].substring(1,cookies[i].length);
+        	        if (cookies[i].indexOf(cookiename+'=') == 0){
+				contents = cookies[i].replace(uidregexp, "$1");
+	                }
+	        }
+	} catch (err) {} //ensure that if anything goes wrong, we don't break the rest of the tracking code
 	if (contents != "") {
 		return contents;
 	} else {
